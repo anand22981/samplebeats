@@ -1,11 +1,12 @@
 
-import './App.css'
+import React from "react";
+import Layout from './component/Layout/layout'
 
 function App() {
   
   return (
     <>
-   <div>Hello Sample Beat</div>
+      <Layout/>
     </>
   )
 }
