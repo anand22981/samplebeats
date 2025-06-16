@@ -6,8 +6,18 @@ To take pull from develop
 ```
 git pull origin develop
 ```
+## Or Take a pull
+```
+git clone https://github.com/Benzyteam/at_flight.git --branch develop
 
-##📋 Check the current status of your working directory
+```
+## or
+```
+git clone https://github.com/Benzyteam/at_flight.git --branch develop --depth 1 --origin upstream
+
+```
+
+## Check the current status of your working directory
 check the status of you changes
 
 ```
