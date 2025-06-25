@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img src={FullLogo} alt="Logo" style={{ height: 90, margin: "10px auto" }} />
+      <img src={FullLogo} alt="Logo" style={{ height: 80, margin: "10px auto",}} />
       <List>
         {navItems.map((item) => (
           <ListItem button key={item}>
@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar color="inherit" sx={{ backgroundColor: "black" }} elevation={0}>
+      <AppBar  position="fixed"  color="inherit" sx={{ backgroundColor: "black", top: 0 }} elevation={0}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box
             component="img"
