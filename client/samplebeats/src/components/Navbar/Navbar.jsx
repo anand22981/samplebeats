@@ -12,21 +12,43 @@ import ListItemText from "@mui/material/ListItemText";
 import "./Navbar.css";
 import FullLogo from "../../assets/FullLogo_Transparent.png";
 
-const navItems = ["Home", "samples", "blogs", "Contact"];
+const navItems = ["Home", "Samples", "Blogs", "Contact"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [activeItem, setActiveItem] = React.useState("Home");
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen((prev) => !prev);
+  };
+
+  const handleNavClick = (item) => {
+    setActiveItem(item);
+    setMobileOpen(false); // close drawer on mobile
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img src={FullLogo} alt="Logo" style={{ height: 80, margin: "10px auto",}} />
+    <Box sx={{ textAlign: "center", backgroundColor: "#000", height: "100%" }}>
+      <img
+        src={FullLogo}
+        alt="Logo"
+        style={{ height: 80, margin: "20px auto" }}
+      />
       <List>
         {navItems.map((item) => (
-          <ListItem button key={item}>
+          <ListItem
+            button
+            key={item}
+            onClick={() => handleNavClick(item)}
+            sx={{
+              justifyContent: "center",
+              color: activeItem === item ? "white" : "#ccc",
+              "&:hover": {
+                backgroundColor: "#222",
+                color: "white",
+              },
+            }}
+          >
             <ListItemText primary={item} />
           </ListItem>
         ))}
@@ -36,30 +58,40 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar  position="fixed"  color="inherit" sx={{ backgroundColor: "black", top: 0 }} elevation={0}>
+      <AppBar position="fixed" sx={{ backgroundColor: "black" }} elevation={0}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
+          {/* Logo */}
           <Box
             component="img"
             src={FullLogo}
-            sx={{ height: 110, width: 150 }}
+            sx={{ height: 100, width: 150 }}
             alt="Full Logo"
           />
 
-          {/* Desktop nav buttons */}
-          <Box
-            className="nav-bar-button"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+          {/* Desktop Navigation */}
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "white", mx: 0.5 }}>
+              <Button
+                key={item}
+                onClick={() => handleNavClick(item)}
+                sx={{
+                  color: activeItem === item ? "white" : "gray",
+                  fontWeight: activeItem === item ? "bold" : "normal",
+                  mx: 1,
+                  backgroundColor: "transparent",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    color: "white",
+                  },
+                }}
+              >
                 {item}
               </Button>
             ))}
           </Box>
 
-          {/* Menu icon for small screens */}
+          {/* Mobile Hamburger Icon */}
           <IconButton
-            color="inherit"
             edge="end"
             onClick={handleDrawerToggle}
             sx={{ display: { xs: "block", sm: "none" }, color: "white" }}
@@ -69,13 +101,13 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Drawer for mobile menu */}
+      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile
+          keepMounted: true,
         }}
       >
         {drawer}
