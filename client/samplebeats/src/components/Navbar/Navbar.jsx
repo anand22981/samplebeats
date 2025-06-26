@@ -11,12 +11,23 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import "./Navbar.css";
 import FullLogo from "../../assets/FullLogo_Transparent.png";
+import { Link, useLocation } from "react-router-dom";
 
-const navItems = ["Home", "Samples", "Blogs", "Contact"];
+
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "Samples", path: "/Sample" },
+  { label: "Blogs", path: "/Blog" },
+  { label: "Contact", path: "/ContactUs" },
+];
+
+
+
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState("Home");
+  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prev) => !prev);
@@ -38,18 +49,18 @@ const Navbar = () => {
         {navItems.map((item) => (
           <ListItem
             button
-            key={item}
-            onClick={() => handleNavClick(item)}
+            key={item.label}
+            onClick={() => handleNavClick(item.label)}
             sx={{
               justifyContent: "center",
-              color: activeItem === item ? "white" : "#ccc",
+              color: activeItem === item.label ? "white" : "#ccc",
               "&:hover": {
-                backgroundColor: "#222",
+                backgroundColor: "white",
                 color: "white",
               },
             }}
           >
-            <ListItemText primary={item} />
+            <ListItemText primary={item.label} />
           </ListItem>
         ))}
       </List>
@@ -71,22 +82,30 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button
-                key={item}
-                onClick={() => handleNavClick(item)}
-                sx={{
-                  color: activeItem === item ? "white" : "gray",
-                  fontWeight: activeItem === item ? "bold" : "normal",
-                  mx: 1,
-                  backgroundColor: "transparent",
-                  "&:hover": {
-                    backgroundColor: "transparent",
-                    color: "white",
-                  },
-                }}
+              <Link
+                key={item.label}
+                to={item.path}
+                onClick={() => handleNavClick(item.label)}
+                style={{ textDecoration: "none" }}
               >
-                {item}
-              </Button>
+                <Button
+                  sx={{
+                    color:
+                      activeItem === item.label ||
+                      location.pathname === item.path
+                        ? "white"
+                        : "gray",
+                    fontWeight: activeItem === item.label ? "bold" : "normal",
+                    mx: 1,
+                    "&:hover": {
+                      backgroundColor: "transparent",
+                      color: "white",
+                    },
+                  }}
+                >
+                  {item.label}
+                </Button>
+              </Link>
             ))}
           </Box>
 

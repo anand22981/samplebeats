@@ -1,23 +1,49 @@
 *{
-    margin: 0px;
-  
-    padding: 0px;
-   
+    margin: 0px; 
+    padding: 0px;  
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
 }
 
+.homepage{
+    background-color: black;
+}
+
+@media (max-width: 600px) {
 .bg-image-below-header{
     text-align: center;
     padding: 4rem 2rem;
-    background-color: black;
+    background-color: white;
+    border-style: solid;
+   
+}
+.header{
+    color: white;
+    font-size: 30px;
+    border-style: dotted;
+}
+
+.header-right{
+    color: white;
+    font-size: 30px;
+    padding-left: 100px;
+}
 }
 .bg-image-below-header img{
     width: 100%;
+    height: auto;
     max-height: 500px;
     object-fit: cover;
     border-radius: 10px;
+    margin-bottom: 30px;
+    
 
+}
+.bg-image-below-header h1{
+    width: auto;
+    max-height: 500px;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .text-color{
@@ -31,6 +57,9 @@ font-size: 80px;
 color: white;
 text-align: center;
 font-size: 15px;
+margin-bottom: 20px;
+background-color: black;
+
 
 }
 
@@ -38,29 +67,26 @@ font-size: 15px;
  
     width: 30%; 
     padding-right: 100px;
+    
 }
 
 .img-body {
     width: 40%;
     height: auto;
+    border-style: solid;
 }
 
 .container{
   display: flex;
+  margin-top: 100px;
   align-items: center;
+ 
 
 }
 
-.header{
-    color: white;
-    font-size: 30px
-}
 
-.header-right{
-    color: white;
-    font-size: 30px;
-    padding-left: 100px;
-}
+
+
 .text-color-pargraph-2{
     width: 30%; 
     padding-left: 100px;
