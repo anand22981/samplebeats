@@ -1,6 +1,5 @@
-import react from "react";
 import Navbar from "../Navbar/Navbar";
-import BGIMG from "../../assets/bg-image.jpg";
+import Homepage from "../../pages/homepage";
 import "./Layout.css";
 const Layout = () => {
   return (
@@ -8,15 +7,12 @@ const Layout = () => {
       <header>
         <Navbar />
       </header>
-      <div className="bg-image-below-header">
-        <img src={BGIMG} alt="bg-image" />
-
-      </div>
-
       <main>
-
+          <Homepage/>
       </main>
-      <footer></footer>
+      <footer>
+         <h1></h1>
+      </footer>
     </>
   );
 };
