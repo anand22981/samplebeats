@@ -4,15 +4,16 @@ import Footer from "../component/Footer";
 import Homepage from "../pages/homepage";
 //pages/Homepage.jsx
 
- export default function Layout(){
-    return(
-        <Fragment>
+export default function Layout() {
+  return (
+    <Fragment>
+      <Navbar />
 
-            <Navbar />
-            <Homepage/>
-            <Footer/>
+      <main className="pt-16">
+        <Homepage />
+      </main>
 
-        </Fragment>
-    )
+      
+    </Fragment>
+  );
 }
-

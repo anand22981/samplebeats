@@ -1,10 +1,10 @@
-
-import image2 from '.././assets/luis-morera-klNRtxIgiMM-unsplash.jpg'
-import image3 from '.././assets/troy-t-dX76Mts-LVM-unsplash.jpg'
+import image2 from ".././assets/luis-morera-klNRtxIgiMM-unsplash.jpg";
+import image3 from ".././assets/troy-t-dX76Mts-LVM-unsplash.jpg";
 import sample1 from "../assets/sample1.wav";
 import sample2 from "../assets/sample2.wav";
 import sample3 from "../assets/sample3.wav";
 import sample4 from "../assets/sample4.wav";
+import Footer from "../component/Footer";
 
 const Homepage = () => {
   const musicSamples = [
@@ -13,7 +13,6 @@ const Homepage = () => {
     { id: 3, title: "Lo-Fi Groove", src: sample3 },
     { id: 4, title: "Drum Pack", src: sample4 },
   ];
-  
 
   return (
     <div className=" w-full h-screen">
@@ -88,6 +87,7 @@ const Homepage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
