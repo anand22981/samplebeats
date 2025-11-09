@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div>
-            <h1 className="text-center text-l">Made with in Bihar</h1>
+            <h1 className="text-center text-l">Made with love in Bihar</h1>
         </div>
         <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-500 text-xs">
                           

@@ -130,11 +130,11 @@ const Homepage = () => {
           <p className="text-gray-300 mb-6">
             Get exclusive access to new samples, sound packs, and updates delivered straight to your inbox.
           </p>
-          <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <form className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-3 rounded-lg w-full sm:w-1/2 outline-none text-black"
+              className="px-4 py-3 bg-white  rounded-lg w-full sm:w-1/2 outline-none text-black"
             />
             <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition">
               Subscribe
