@@ -51,11 +51,11 @@ export default function Footer() {
             </ul>
           </div>
            <div >
-            <h3 className="mb-3 font-semibold">Legal</h3>
+            <h3 className="mb-3 font-semibold">Connect</h3>
             <ul className="space-y-2">
-              <li className="hover:text-yellow-300">Term and condition</li>
-              <li className="hover:text-yellow-300">Privacy Policy</li>
-              <li className="hover:text-yellow-300">License Agreement</li>
+              <li className="hover:text-yellow-300">Instagram</li>
+              <li className="hover:text-yellow-300">Twitter</li>
+              <li className="hover:text-yellow-300">YouTube</li>
             </ul>
           </div>
 
