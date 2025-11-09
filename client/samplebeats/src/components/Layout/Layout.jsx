@@ -1,4 +1,4 @@
-import react from "react";
+
 import Navbar from "../Navbar/Navbar";
 import BGIMG from "../../assets/bg-image.jpg";
 import "./Layout.css";
@@ -9,6 +9,10 @@ const Layout = () => {
         <Navbar />
       </header>
       <div className="bg-image-below-header">
+        <img src={BGIMG} alt="bg-image" />
+
+      </div>
+       <div className="bg-image-below-header">
         <img src={BGIMG} alt="bg-image" />
 
       </div>
