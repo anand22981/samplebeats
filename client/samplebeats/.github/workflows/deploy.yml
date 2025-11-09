@@ -1,0 +1,48 @@
+name: CI/CD React App to EC2
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm install --prefix ./client/samplebeats
+
+      # 4️⃣ Build project
+      - name: Build React/Vite project
+        run: npm run build --prefix ./client/samplebeats
+
+      # 5️⃣ Deploy to EC2 via SSH
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            # Remove old files
+            sudo rm -rf /usr/share/nginx/html/*
+            # Copy new build
+            sudo cp -r ~/samplebeats/client/samplebeats/dist/* /usr/share/nginx/html/
+            # Fix permissions
+            sudo chown -R nginx:nginx /usr/share/nginx/html/
+            sudo chmod -R 755 /usr/share/nginx/html/
+            # Reload nginx
+            sudo systemctl reload nginx
+
