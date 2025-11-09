@@ -86,6 +86,63 @@ const Homepage = () => {
             />
           </div>
         </section>
+
+        {/* Section 2: Featured Categories */}
+        <section className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-yellow-400 text-3xl font-semibold mb-12">
+            Featured Categories
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {["Hip-Hop", "Lo-Fi", "EDM", "Cinematic"].map((genre, index) => (
+              <div
+                key={index}
+                className="bg-gray-900 p-6 rounded-2xl text-white hover:bg-gray-800 transition flex flex-col justify-center items-center"
+              >
+                <h3 className="text-2xl font-bold mb-3">{genre}</h3>
+                <p className="text-gray-400 text-sm">
+                  Explore premium {genre} samples and loops
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+            {/* Section 3: Why Choose Us */}
+        <section className="flex flex-col md:flex-row-reverse items-center justify-between max-w-6xl mx-auto px-6">
+          <div className="md:w-1/2 text-right mb-10 md:mb-0">
+            <h2 className="text-yellow-400 text-2xl mb-3 font-semibold">Why Choose SampleBeats?</h2>
+            <p className="text-white text-4xl font-bold mb-6">High Quality Beats & Loops</p>
+            <ul className="text-gray-400 space-y-2">
+              <li>🎧 100% Royalty-Free</li>
+              <li>🚀 Updated Weekly with New Packs</li>
+              <li>💾 Instant Downloads</li>
+              <li>🌍 Global Producer Community</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2">
+            <img src={image2} alt="Beats" className="rounded-xl w-full object-cover" />
+          </div>
+        </section>
+
+        {/* Section 4: Newsletter */}
+        <section className="bg-gray-900 py-16 text-center rounded-2xl max-w-5xl mx-auto px-6">
+          <h2 className="text-yellow-400 text-3xl font-semibold mb-4">Join Our Community</h2>
+          <p className="text-gray-300 mb-6">
+            Get exclusive access to new samples, sound packs, and updates delivered straight to your inbox.
+          </p>
+          <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-3 rounded-lg w-full sm:w-1/2 outline-none text-black"
+            />
+            <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition">
+              Subscribe
+            </button>
+          </form>
+        </section>
+
+
       </div>
       <Footer />
     </div>
