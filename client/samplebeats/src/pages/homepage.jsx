@@ -1,5 +1,7 @@
 import image2 from ".././assets/luis-morera-klNRtxIgiMM-unsplash.jpg";
 import image3 from ".././assets/troy-t-dX76Mts-LVM-unsplash.jpg";
+
+import image4 from ".././assets/caught-in-joy-ptVBlniJi50-unsplash.jpg"
 import sample1 from "../assets/sample1.wav";
 import sample2 from "../assets/sample2.wav";
 import sample3 from "../assets/sample3.wav";
@@ -120,7 +122,7 @@ const Homepage = () => {
             </ul>
           </div>
           <div className="md:w-1/2">
-            <img src={image2} alt="Beats" className="rounded-xl w-full object-cover" />
+            <img src={image4} alt="Beats" className="rounded-xl w-full object-cover" />
           </div>
         </section>
 
