@@ -1,6 +1,4 @@
-
-
-import Layout from "./Layout/layout"
+import Layout from "./Layout/Layout.jsx"
 
 function App() {
   
