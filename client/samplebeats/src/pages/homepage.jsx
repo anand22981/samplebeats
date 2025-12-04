@@ -1,12 +1,13 @@
 import image2 from ".././assets/luis-morera-klNRtxIgiMM-unsplash.jpg";
 import image3 from ".././assets/troy-t-dX76Mts-LVM-unsplash.jpg";
 
-import image4 from ".././assets/caught-in-joy-ptVBlniJi50-unsplash.jpg"
+import image4 from ".././assets/caught-in-joy-ptVBlniJi50-unsplash.jpg";
 import sample1 from "../assets/sample1.wav";
 import sample2 from "../assets/sample2.wav";
 import sample3 from "../assets/sample3.wav";
 import sample4 from "../assets/sample4.wav";
 import Footer from "../component/Footer";
+import { NavLink } from "react-router";
 
 const Homepage = () => {
   const musicSamples = [
@@ -109,11 +110,15 @@ const Homepage = () => {
           </div>
         </section>
 
-            {/* Section 3: Why Choose Us */}
+        {/* Section 3: Why Choose Us */}
         <section className="flex flex-col md:flex-row-reverse items-center justify-between max-w-6xl mx-auto px-6">
           <div className="md:w-1/2 text-right mb-10 md:mb-0">
-            <h2 className="text-yellow-400 text-2xl mb-3 font-semibold">Why Choose SampleBeats?</h2>
-            <p className="text-white text-4xl font-bold mb-6">High Quality Beats & Loops</p>
+            <h2 className="text-yellow-400 text-2xl mb-3 font-semibold">
+              Why Choose SampleBeats?
+            </h2>
+            <p className="text-white text-4xl font-bold mb-6">
+              High Quality Beats & Loops
+            </p>
             <ul className="text-gray-400 space-y-2">
               <li>🎧 100% Royalty-Free</li>
               <li>🚀 Updated Weekly with New Packs</li>
@@ -122,15 +127,22 @@ const Homepage = () => {
             </ul>
           </div>
           <div className="md:w-1/2">
-            <img src={image4} alt="Beats" className="rounded-xl w-full object-cover" />
+            <img
+              src={image4}
+              alt="Beats"
+              className="rounded-xl w-full object-cover"
+            />
           </div>
         </section>
 
         {/* Section 4: Newsletter */}
         <section className="bg-gray-900 py-16 text-center rounded-2xl max-w-5xl mx-auto px-6">
-          <h2 className="text-yellow-400 text-3xl font-semibold mb-4">Join Our Community</h2>
+          <h2 className="text-yellow-400 text-3xl font-semibold mb-4">
+            Join Our Community
+          </h2>
           <p className="text-gray-300 mb-6">
-            Get exclusive access to new samples, sound packs, and updates delivered straight to your inbox.
+            Get exclusive access to new samples, sound packs, and updates
+            delivered straight to your inbox.
           </p>
           <form className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <input
@@ -144,9 +156,8 @@ const Homepage = () => {
           </form>
         </section>
 
-
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
