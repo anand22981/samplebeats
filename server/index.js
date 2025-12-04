@@ -1,7 +1,14 @@
-const express = require('express');
-const app =express();
+const express = require("express")
 
+const app = express()
 
-app.listen(3600,(res,req)=>{
-    console.log("sever has been started")
+app.use("/Sigin",(req,res)=>{
+   res.send("Hello from the server")
 })
+app.use("/Sigup",(req,res)=>{
+   res.send("Hello from the server")
+})
+
+app.listen(3000,()=>{
+  console.log(" Sever is running...")
+});
